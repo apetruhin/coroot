@@ -23,6 +23,8 @@ jobs:
       - run: npm ci
       - run: npm version ${{ env.VERSION }}
       - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npx vue-cli-service build --dest=../static src/main.js
       - uses: actions/upload-artifact@v3
         with:
