@@ -26,9 +26,9 @@ jobs:
       - run: npm version ${{ env.VERSION }}
       - run: pwd
         continue-on-error: true
-      - run: cat .npmrc
+      - run: ls -la .
         continue-on-error: true
-      - run: cat ../.npmrc
+      - run: ls -la ..
         continue-on-error: true
       - run: pwd && npm publish
         env:
