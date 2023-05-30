@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm version {{ .env.VERSION }}
+      - run: npm version ${{ env.VERSION }}
       - run: npm publish
       - run: npx vue-cli-service build --dest=../static src/main.js
       - uses: actions/upload-artifact@v3
