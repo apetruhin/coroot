@@ -1,9 +1,6 @@
 {
-  "name": "@apetruhin/coroot",
+  "name": "@coroot/coroot",
   "version": "0.1.0",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "build": "vue-cli-service build --dest=../static --watch",
     "lint": "vue-cli-service lint"
