@@ -20,6 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com'
           cache: 'npm'
           cache-dependency-path: ./front/package-lock.json
       - run: npm ci
