@@ -24,6 +24,10 @@ jobs:
           cache-dependency-path: ./front/package-lock.json
       - run: npm ci
       - run: npm version ${{ env.VERSION }}
+      - run: cat .npmrc
+        continue-on-error: true
+      - run: cat ../.npmrc
+        continue-on-error: true
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
