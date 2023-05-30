@@ -1,6 +1,6 @@
 {
-  "name": "@coroot/coroot",
-  "version": "0.1.2",
+  "name": "@apetruhin/coroot",
+  "version": "0.1.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
