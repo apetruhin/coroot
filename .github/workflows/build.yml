@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+          cache: 'npm'
+          cache-dependency-path: ./front/package-lock.json
       - run: npm ci
       - run: npm version ${{ env.VERSION }}
       - run: npm publish
