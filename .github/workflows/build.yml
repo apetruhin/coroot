@@ -24,11 +24,13 @@ jobs:
           cache-dependency-path: ./front/package-lock.json
       - run: npm ci
       - run: npm version ${{ env.VERSION }}
+      - run: pwd
+        continue-on-error: true
       - run: cat .npmrc
         continue-on-error: true
       - run: cat ../.npmrc
         continue-on-error: true
-      - run: npm publish
+      - run: pwd && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npx vue-cli-service build --dest=../static src/main.js
