@@ -1,7 +1,9 @@
 {
-  "name": "coroot",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@coroot/coroot",
+  "version": "0.1.2",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "vue-cli-service build --dest=../static --watch",
     "lint": "vue-cli-service lint"

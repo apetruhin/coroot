@@ -120,9 +120,9 @@
 </template>
 
 <script>
-import Led from "@/components/Led.vue";
-import Heatmap from "@/components/Heatmap";
-import TracingTrace from "@/components/TracingTrace";
+import Led from "../components/Led.vue";
+import Heatmap from "../components/Heatmap";
+import TracingTrace from "../components/TracingTrace";
 
 export default {
     props: {
