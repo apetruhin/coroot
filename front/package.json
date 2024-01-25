@@ -63,6 +63,13 @@
       "vue/valid-v-slot": "off"
     }
   },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 150,
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "semi": true
+  },
   "browserslist": [
     "defaults"
   ]
