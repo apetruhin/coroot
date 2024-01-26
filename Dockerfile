@@ -6,11 +6,11 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 ARG VERSION=unknown
-RUN go build -mod=readonly -ldflags "-X main.version=$VERSION" -o /tmp/coroot .
+RUN go build -mod=readonly -ldflags "-X main.version=$VERSION" -o coroot .
 
 
 FROM node:21-bullseye AS frontend-builder
-WORKDIR /tmp/src
+WORKDIR /tmp/src/front
 COPY ./front/package*.json ./
 RUN npm ci
 COPY ./front .
@@ -21,8 +21,8 @@ FROM debian:bullseye
 RUN apt update && apt install -y ca-certificates && apt clean
 
 WORKDIR /opt/coroot
-COPY --from=backend-builder /tmp/coroot /opt/coroot/coroot
-COPY --from=frontend-builder /tmp/static /opt/coroot/static
+COPY --from=backend-builder /tmp/src/coroot /opt/coroot/coroot
+COPY --from=frontend-builder /tmp/src/static /opt/coroot/static
 
 VOLUME /data
 EXPOSE 8080
