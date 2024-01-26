@@ -42,7 +42,7 @@ jobs:
         with:
           name: static
           path: /tmp/static
-      - run: sed -i 's/--from=frontend-builder/--from=backend-builder/' Dockerfile
+      - run: sed -i 's/--from=frontend-builder//' Dockerfile
 
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
